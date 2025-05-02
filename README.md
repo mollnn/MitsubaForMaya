@@ -6,7 +6,7 @@ A [Maya](http://www.autodesk.com/products/maya) plugin for the [Mitsuba](http://
 
 Supported Features
 -
-Mitsuba 0.5.0 is the currently supported version.
+Mitsuba 0.6.0 is the currently supported version.
 
 Supported Mitsuba Features:
 
@@ -53,7 +53,7 @@ Usage
 
 	- Linux: ex. /usr/local/mitsuba/mitsuba
 
-	- Windows: ex. C:/path/where/you/downloaded/Mitsuba 0.5.0 64bit/Mitsuba 0.5.0/mitsuba.exe
+	- Windows: ex. C:/path/where/you/downloaded/Mitsuba 0.6.0 64bit/Mitsuba 0.6.0/mitsuba.exe
 
 - The second field in the Render Settings Mituba tab is the path to the 'oiiotool' binary. You must set this to be able to use Maya's render region functionality. The setting can be specified using the OIIOTOOL_PATH environment variable, as described below, or manually from the Render Settings UI. The path will be retained in a file's Render Settings so the value only has to be specified the first time you use a scene.
 
@@ -65,7 +65,7 @@ The path to the Mitsuba binary has to be specified, either in the Render Setting
 
 - To set the value in the Maya.env or in your shell environment, set the MITSUBA_PATH environment variable to  
 
-	- Windows: MITSUBA_PATH = C:\path\to\Mitsuba 0.5.0\mitsuba.exe
+	- Windows: MITSUBA_PATH = C:\path\to\Mitsuba 0.6.0\mitsuba.exe
 
 	- Mac: MITSUBA_PATH = /path/to/Mitsuba.app/Contents/MacOS/mitsuba
 

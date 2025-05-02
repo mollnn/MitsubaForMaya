@@ -2576,7 +2576,7 @@ def writeScene(outFileName, renderDir, renderSettings):
     sceneElement = createSceneElement()
 
     # Should make this query the binary...
-    sceneElement.addAttribute('version', '0.5.0')
+    sceneElement.addAttribute('version', '0.6.0')
 
     # Get integrator
     integratorElement = writeIntegrator(renderSettings)

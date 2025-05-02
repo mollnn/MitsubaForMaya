@@ -332,7 +332,7 @@ class mitsubaForMaya(OpenMayaMPx.MPxCommand):
         mitsubaRender = Process(description='render an image',
             cmd=mitsubaPath,
             args=args,
-            env=env)
+            env=env, non_blocking=True)
 
         def renderLogCallback(line):
             if "Writing image" in line:
@@ -343,30 +343,31 @@ class mitsubaForMaya(OpenMayaMPx.MPxCommand):
                     MitsubaRendererUI.showRender(imageName)
 
         mitsubaRender.log_callback = renderLogCallback
-        #mitsubaRender.echo = False
+        mitsubaRender.echo = False
 
         mitsubaRender.execute()
-        mitsubaRender.write_log_to_disk(logName, format='txt')
+        # mitsubaRender.write_log_to_disk(logName, format='txt')
 
-        print( "Render execution returned : %s" % mitsubaRender.status )
+        # print( "Render execution returned : %s" % mitsubaRender.status )
 
-        if oiiotoolPath != "":
-            self.resetImageDataWindow(imageName, oiiotoolPath)
+        # if oiiotoolPath != "":
+        #     self.resetImageDataWindow(imageName, oiiotoolPath)
 
-        if not keepTempFiles:
-            #Delete all of the temp file we just made
-            os.chdir(renderDir)
-            for geometryFile in geometryFiles:
-                try:
-                    #print( "Removing geometry : %s" % geometryFile )
-                    os.remove(geometryFile)
-                except:
-                    print( "Error removing temporary file : %s" % geometryFile )
-            #print( "Removing mitsuba scene description : %s" % outFileName )
-            os.remove(outFileName)
-            #os.remove(logName)
-        else:
-            print( "Keeping temporary files" )
+        # if not keepTempFiles:
+        #     #Delete all of the temp file we just made
+        #     os.chdir(renderDir)
+        #     for geometryFile in geometryFiles:
+        #         try:
+        #             #print( "Removing geometry : %s" % geometryFile )
+        #             os.remove(geometryFile)
+        #         except:
+        #             print( "Error removing temporary file : %s" % geometryFile )
+        #     #print( "Removing mitsuba scene description : %s" % outFileName )
+        #     os.remove(outFileName)
+        #     #os.remove(logName)
+        # else:
+        #     print( "Keeping temporary files" )
+        # print("end1")
 
         return imageName
 
